@@ -1,22 +1,176 @@
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #0d1b2a;
+    --champagne: #d4af37;
+    --ivory: #f9f6f0;
+    --card-bg: #fdfbf7;
+    --text-dark: #1f2937;
+    --text-muted: #555555;
+}
+
 body {
-  margin: 0;
-  color: #1f2937;
-  background: #f5f7fa;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+    margin: 0;
+    color: var(--text-dark);
+    background: var(--ivory);
+    font-family: 'Lora', serif;
+    line-height: 1.6;
 }
+
 header, main, footer {
-  width: min(960px, 92%);
-  margin: auto;
+    width: min(1100px, 92%);
+    margin: auto;
 }
-header { padding: 48px 0 24px; }
-nav { display: flex; flex-wrap: wrap; gap: 16px; }
-section {
-  margin: 20px 0;
-  padding: 24px;
-  background: white;
-  border-radius: 12px;
+
+/* Header Layout */
+header {
+    padding: 48px 32px;
+    background: var(--navy);
+    color: var(--ivory);
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 40px;
 }
-img { max-width: 100%; height: auto; }
-a { color: #8a1538; }
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.header-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.subtitle-top {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--champagne);
+    margin: 0 0 8px;
+}
+
+header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 12px;
+    color: var(--ivory);
+}
+
+header p {
+    margin: 0 0 20px;
+    color: #e0e1dd;
+    font-size: 1.1rem;
+}
+
+/* Rounded Portrait Picture Box */
+.profile-pic-container {
+    flex-shrink: 0;
+}
+
+.profile-pic {
+    width: 130px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid var(--champagne);
+    background-color: #243447;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background: var(--champagne);
+    color: var(--navy);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Main Section Heading */
+.section-title {
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 24px;
+}
+
+/* Grid for 6 Artifacts */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+/* Card Style */
+.artifact-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 12px rgba(13, 27, 42, 0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Header Badge */
+.card-number-header {
+    background: var(--navy);
+    color: var(--ivory);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-number-header .num {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--champagne);
+    line-height: 1;
+}
+
+.card-number-header h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: right;
+    max-width: 180px;
+    color: var(--ivory);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Description Space Area */
+.card-body {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-box {
+    border: 2px dashed #d1c7b7;
+    border-radius: 12px;
+    padding: 20px;
+    color: var(--text-muted);
+    min-height: 140px;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+}
+
+footer {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--text-muted);
+    border-top: 1px solid #e5dfd3;
+    font-size: 0.9rem;
+}
