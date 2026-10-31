@@ -7,42 +7,207 @@
     <!-- Import Lora font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navy and Champagne Color Theme */
+        :root {
+            --navy: #0B2545;
+            --champagne: #F4D1AE;
+            --champagne-light: #FDF8F2;
+        }
+
+        .welcome {
+            background-color: var(--navy);
+            color: #ffffff;
+        }
+
+        .welcome h1, 
+        .welcome h2, 
+        .welcome p, 
+        .welcome .footer-note {
+            color: var(--champagne);
+        }
+
+        .welcome .btn-primary {
+            background-color: var(--champagne);
+            color: var(--navy);
+        }
+
+        .welcome .btn-secondary {
+            border-color: var(--champagne);
+            color: var(--champagne);
+        }
+
+        /* About Me Section Styled Like Journey Bubbles */
+        .about-section {
+            padding: 60px 20px;
+            background-color: var(--champagne-light);
+        }
+
+        .about-section .section-title {
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(11, 37, 69, 0.08);
+            overflow: hidden;
+            border-top: 4px solid var(--navy);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-card-header {
+            background-color: var(--navy);
+            color: var(--champagne);
+            padding: 20px;
+        }
+
+        .about-card-header .num {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .about-card-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .about-card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .description-box {
+            background: #faf8f5;
+            border: 2px dashed #e6d5c3;
+            padding: 15px;
+            border-radius: 8px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .placeholder-img-box {
+            background: #f0e6dc;
+            border-radius: 8px;
+            text-align: center;
+            padding: 25px 10px;
+            color: #8c7355;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-
     <main>
         <!-- Welcome Section with Picture beside Title -->
-        <section id="home" class="welcome"> 
+        <section id="home" class="welcome">
             <div class="header-content">
                 <div class="header-text">
                     <h1>WELCOME TO TEEDCHANAA'S E-PORTFOLIO</h1>
                     <h2>A Journey into Data Engineering</h2>
                     <p>
-                      Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio, 
-                      where I document my academic journey, projects, experiences and continuous
-                      growth in the world of technology.
+                        Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio, where I document my academic journey, projects, experiences and continuous growth in the world of technology.
                     </p>
-
                     <div class="buttons">
                         <a href="#journey" class="btn-primary">Explore My Journey ↗</a>
                         <a href="#about" class="btn-secondary">About Me</a>
                     </div>
                 </div>
-
                 <!-- Profile Picture Container beside the title -->
                 <div class="profile-pic-container">
                     <!-- Replace 'your-photo.jpg' with your actual image filename when you upload it -->
                     <img src="your-photo.jpg" alt="Teedchanaa Portrait" class="profile-pic">
                 </div>
             </div>
-
             <p class="footer-note">SCST1133 &bull; DATA ENGINEERING ECOSYSTEM &bull; 2026</p>
-        </section>                                                                                                         
+        </section>
 
-        <!-- 6 Bubble Artifact Cards Section -->
+        <!-- About Me Section Linked & Styled with Bubble Cards -->
+        <section id="about" class="about-section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <!-- 01 -->
+                <div class="about-card">
+                    <div class="about-card-header">
+                        <span class="num">01</span>
+                        <h3>Core Information</h3>
+                    </div>
+                    <div class="about-card-body">
+                        <div class="description-box">
+                            Programme, education, relevant position or role, technical skills and interests...
+                        </div>
+                        <div class="placeholder-img-box">
+                            [ Give space here: Add your picture ]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02 -->
+                <div class="about-card">
+                    <div class="about-card-header">
+                        <span class="num">02</span>
+                        <h3>Credentials &amp; Learning</h3>
+                    </div>
+                    <div class="about-card-body">
+                        <div class="description-box">
+                            Relevant courses, certificates, workshops, or badges...<br><br>
+                            <em>Give some description here for your achievements and key learnings.</em>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03 -->
+                <div class="about-card">
+                    <div class="about-card-header">
+                        <span class="num">03</span>
+                        <h3>Additional Experience</h3>
+                    </div>
+                    <div class="about-card-body">
+                        <div class="description-box">
+                            Honours, awards, projects, volunteering, or leadership experience...<br><br>
+                            <em>Give some space here to add descriptions later.</em>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04 -->
+                <div class="about-card">
+                    <div class="about-card-header">
+                        <span class="num">04</span>
+                        <h3>Professional Links</h3>
+                    </div>
+                    <div class="about-card-body">
+                        <div class="description-box">
+                            Add links to your GitHub profile, published e-portfolio website and LinkedIn profile, if available.<br><br>
+                            <em>Give space here for links.</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6 Bubble Artifact Cards Section: My Journey So Far -->
         <section id="journey" class="journey-section">
             <h2 class="section-title">My Journey So Far</h2>
-
             <div class="portfolio-grid">
                 <!-- 01 -->
                 <div class="artifact-card">
@@ -128,6 +293,5 @@
     <footer>
         <p>&copy; 2026 Teedchanaa Sugumaran|SCST1133</p>
     </footer>
-
 </body>
-</html>
+</html>                                                                          
