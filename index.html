@@ -15,32 +15,62 @@
             --champagne-light: #FDF8F2;
         }
 
+        body {
+            margin: 0;
+            background-color: var(--champagne-light);
+            font-family: 'Lora', serif;
+            animation: pageFloat 6s ease-in-out infinite;
+        }
+
+        /* Welcome Section */
         .welcome {
             background-color: var(--navy);
             color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 24px 24px;
+            margin-bottom: 40px;
         }
 
-        .welcome h1, 
-        .welcome h2, 
+        .welcome h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--champagne);
+            margin-bottom: 10px;
+        }
+
+        .welcome h2 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
         .welcome p, 
         .welcome .footer-note {
             color: var(--champagne);
         }
 
-        .welcome .btn-primary {
-            background-color: var(--champagne);
-            color: var(--navy);
-        }
-
-        .welcome .btn-secondary {
-            border-color: var(--champagne);
+        /* Scroll Down Indicator */
+        .scroll-down {
+            margin-top: 30px;
             color: var(--champagne);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: bounce 2s infinite;
         }
 
-        /* About Me Section Styled Like Journey Bubbles */
+        .scroll-down .down-arrow {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        /* About Me Section Styled Like Journey Bubbles with Central Picture */
         .about-section {
             padding: 60px 20px;
-            background-color: var(--champagne-light);
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .about-section .section-title {
@@ -54,8 +84,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .about-card {
@@ -66,6 +94,12 @@
             border-top: 4px solid var(--navy);
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(11, 37, 69, 0.12);
         }
 
         .about-card-header {
@@ -96,52 +130,159 @@
         }
 
         .description-box {
-            background: #faf8f5;
+            background: rgba(255, 255, 255, 0.8);
             border: 2px dashed #e6d5c3;
             padding: 15px;
             border-radius: 8px;
             color: #555;
             font-size: 0.95rem;
             line-height: 1.5;
+            animation: bubbleFloat 4s ease-in-out infinite;
         }
 
-        .placeholder-img-box {
-            background: #f0e6dc;
-            border-radius: 8px;
+        /* Central Profile Picture Box inside About Me */
+        .central-pic-box {
+            background: #ffffff;
+            border-radius: 12px;
             text-align: center;
-            padding: 25px 10px;
-            color: #8c7355;
-            font-style: italic;
+            padding: 15px;
+            border: 2px solid var(--champagne);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .central-pic-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .central-pic-box p {
+            margin: 0;
             font-size: 0.9rem;
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        /* Journey / Artifact Section */
+        .journey-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .journey-section .section-title {
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .artifact-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid rgba(244, 209, 174, 0.6);
+            box-shadow: 0 4px 12px rgba(11, 37, 69, 0.04);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .artifact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(11, 37, 69, 0.1);
+        }
+
+        .card-number-header {
+            background: var(--navy);
+            color: var(--champagne);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-number-header .num {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--champagne);
+            line-height: 1;
+        }
+
+        .card-number-header h2 {
+            font-size: 1rem;
+            margin: 0;
+            text-align: right;
+            max-width: 180px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #555;
+            border-top: 1px solid #e6d5c3;
+            background-color: #ffffff;
+            margin-top: 40px;
+        }
+
+        /* Floating Keyframe Animations */
+        @keyframes bubbleFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pageFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-2px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
         }
     </style>
 </head>
 <body>
     <main>
-        <!-- Welcome Section with Picture beside Title -->
+        <!-- Welcome Section with Title and Scroll Down Indicator -->
         <section id="home" class="welcome">
             <div class="header-content">
-                <div class="header-text">
-                    <h1>WELCOME TO TEEDCHANAA'S E-PORTFOLIO</h1>
-                    <h2>A Journey into Data Engineering</h2>
-                    <p>
-                        Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio, where I document my academic journey, projects, experiences and continuous growth in the world of technology.
-                    </p>
-                    <div class="buttons">
-                        <a href="#journey" class="btn-primary">Explore My Journey ↗</a>
-                        <a href="#about" class="btn-secondary">About Me</a>
-                    </div>
-                </div>
-                <!-- Profile Picture Container beside the title -->
-                <div class="profile-pic-container">
-                    <!-- Replace 'your-photo.jpg' with your actual image filename when you upload it -->
-                    <img src="your-photo.jpg" alt="Teedchanaa Portrait" class="profile-pic">
+                <h1>WELCOME TO TEEDCHANAA E-PORTFOLIO</h1>
+                <h2>A Journey into Data Engineering</h2>
+                <p>
+                    Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio documenting my academic journey, projects, and growth.
+                </p>
+                
+                <!-- Scroll Down Indicator Option -->
+                <div class="scroll-down">
+                    <span>scroll down</span>
+                    <span class="down-arrow">&#8595;</span>
                 </div>
             </div>
-            <p class="footer-note">SCST1133 &bull; DATA ENGINEERING ECOSYSTEM &bull; 2026</p>
         </section>
 
-        <!-- About Me Section Linked & Styled with Bubble Cards -->
+        <!-- About Me Section with Central Picture and Bubble Cards -->
         <section id="about" class="about-section">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
@@ -155,22 +296,20 @@
                         <div class="description-box">
                             Programme, education, relevant position or role, technical skills and interests...
                         </div>
-                        <div class="placeholder-img-box">
-                            [ Give space here: Add your picture ]
-                        </div>
                     </div>
                 </div>
 
-                <!-- 02 -->
+                <!-- 02: Central Picture Card -->
                 <div class="about-card">
                     <div class="about-card-header">
                         <span class="num">02</span>
-                        <h3>Credentials &amp; Learning</h3>
+                        <h3>My Picture</h3>
                     </div>
                     <div class="about-card-body">
-                        <div class="description-box">
-                            Relevant courses, certificates, workshops, or badges...<br><br>
-                            <em>Give some description here for your achievements and key learnings.</em>
+                        <div class="central-pic-box">
+                            <!-- Replace 'your-photo.jpg' with your actual photo filename -->
+                            <img src="your-photo.jpg" alt="Teedchanaa Portrait">
+                            <p>Teedchanaa A/P Sugumaran</p>
                         </div>
                     </div>
                 </div>
@@ -179,12 +318,11 @@
                 <div class="about-card">
                     <div class="about-card-header">
                         <span class="num">03</span>
-                        <h3>Additional Experience</h3>
+                        <h3>Credentials &amp; Learning</h3>
                     </div>
                     <div class="about-card-body">
                         <div class="description-box">
-                            Honours, awards, projects, volunteering, or leadership experience...<br><br>
-                            <em>Give some space here to add descriptions later.</em>
+                            Relevant courses, certificates, workshops, or key achievements...
                         </div>
                     </div>
                 </div>
@@ -197,8 +335,7 @@
                     </div>
                     <div class="about-card-body">
                         <div class="description-box">
-                            Add links to your GitHub profile, published e-portfolio website and LinkedIn profile, if available.<br><br>
-                            <em>Give space here for links.</em>
+                            GitHub profile, published e-portfolio website, and LinkedIn links...
                         </div>
                     </div>
                 </div>
@@ -291,7 +428,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Teedchanaa Sugumaran|SCST1133</p>
+        <p>&copy; 2026 Teedchanaa Sugumaran | SCST1133</p>
     </footer>
 </body>
-</html>                                                                          
+</html>
