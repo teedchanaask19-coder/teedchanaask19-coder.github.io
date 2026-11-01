@@ -26,14 +26,29 @@
         .welcome {
             background-color: var(--navy);
             color: #ffffff;
-            padding: 60px 20px;
-            text-align: center;
+            padding: 60px 40px;
             border-radius: 0 0 24px 24px;
             margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: left;
         }
 
         .welcome h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             color: var(--champagne);
             margin-bottom: 10px;
         }
@@ -48,22 +63,73 @@
         .welcome p, 
         .welcome .footer-note {
             color: var(--champagne);
+            line-height: 1.6;
         }
 
-        /* Scroll Down Indicator */
+        /* Portrait Container (Arch Shape) */
+        .portrait-container {
+            width: 180px;
+            height: 240px;
+            background-color: var(--navy);
+            border-radius: 90px 90px 0 0;
+            border: 3px solid var(--champagne);
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .portrait-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Swipe / Scroll Right Interactive Prompt */
         .scroll-down {
             margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             color: var(--champagne);
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            animation: bounce 2s infinite;
         }
 
-        .scroll-down .down-arrow {
-            display: block;
-            font-size: 1.5rem;
-            margin-top: 5px;
+        .swipe-track {
+            position: relative;
+            width: 120px;
+            height: 36px;
+            background: rgba(244, 209, 174, 0.15);
+            border: 1px solid var(--champagne);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            padding: 0 4px;
+            overflow: hidden;
+        }
+
+        .swipe-btn {
+            position: absolute;
+            left: 4px;
+            width: 28px;
+            height: 28px;
+            background-color: var(--champagne);
+            color: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            animation: swipePrompt 2s infinite ease-in-out;
+        }
+
+        .swipe-btn:hover {
+            background-color: #ffffff;
         }
 
         /* About Me Section Styled Like Journey Bubbles with Central Picture */
@@ -243,7 +309,7 @@
             margin-top: 40px;
         }
 
-        /* Floating Keyframe Animations */
+        /* Animations */
         @keyframes bubbleFloat {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-4px); }
@@ -256,31 +322,42 @@
             100% { transform: translateY(0px); }
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-8px); }
-            60% { transform: translateY(-4px); }
+        @keyframes swipePrompt {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(76px); }
         }
     </style>
 </head>
 <body>
     <main>
-        <!-- Welcome Section with Title and Scroll Down Indicator -->
+        <!-- Welcome Section with Title, Intro, and Portrait -->
         <section id="home" class="welcome">
-            <div class="header-content">
-                <h1>WELCOME TO TEEDCHANAA E-PORTFOLIO</h1>
-                <h2>A Journey into Data Engineering</h2>
-                <p>
-                    Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio documenting my academic journey, projects, and growth.
-                </p>
-                
-                <!-- Scroll Down Indicator Option -->
-                <div class="scroll-down">
-                    <span>scroll down</span>
-                    <span class="down-arrow">&#8595;</span>
+            <div class="welcome-container">
+                <div class="header-content">
+                    <h1>WELCOME TO TEEDCHANAA E-PORTFOLIO</h1>
+                    <h2>A Journey into Data Engineering</h2>
+                    <p>
+                        Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio documenting my academic journey, projects, and growth.
+                    </p>
+                    
+                    <!-- Swipe Right Indicator -->
+                    <div class="scroll-down">
+                        <span>swipe right</span>
+                        <div class="swipe-track">
+                            <div class="swipe-btn">&#8594;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arch-Shaped Vertical Portrait Inside Navy Background -->
+                <div class="portrait-container">
+                    <img src="PATH_TO_YOUR_PORTRAIT_IMAGE" alt="Teedchanaa Portrait">
                 </div>
             </div>
         </section>
+    </main>
+</body>
+</html>
 
         <!-- About Me Section with Central Picture and Bubble Cards -->
         <section id="about" class="about-section">
@@ -338,9 +415,15 @@
                 &rarr; <strong>GitHub profile:</strong> 
                 <a href="https://github.com/teedchanaask19-coder" target="_blank" style="color: var(--navy); text-decoration: underline;">@teedchanaask19-coder</a>
             </p>
-            <p style="margin: 0;">
+            <p style="margin: 0 0 10px 0;">
                 &rarr; <strong>LinkedIn:</strong> 
                 <a href="https://www.linkedin.com/in/teedchanaa-sugumaran-593b75442" target="_blank" style="color: var(--navy); text-decoration: underline;">View LinkedIn Profile</a>
+            </p>
+            <p style="margin: 0;">
+                &rarr; <strong>University:</strong> 
+                <a href="https://www.utm.my" target="_blank">
+                    <img src="PATH_TO_YOUR_LOGO_IMAGE" alt="UTM Logo" style="height: 24px; vertical-align: middle; margin-left: 5px;">
+                </a>
             </p>
         </div>
     </div>
