@@ -43,7 +43,7 @@
         .welcome {
             background-color: var(--navy);
             color: #ffffff;
-            padding: 40px 30px; /* Reduced vertical length */
+            padding: 40px 30px;
             border-radius: 0 0 24px 24px;
             margin-bottom: 30px;
             position: relative;
@@ -86,8 +86,8 @@
 
         /* Portrait Container (Arch Shape - Wider and Longer) */
         .portrait-container {
-            width: 210px; /* Increased width */
-            height: 290px; /* Increased length */
+            width: 210px;
+            height: 290px;
             background-color: var(--navy);
             border-radius: 105px 105px 0 0;
             border: 3px solid var(--champagne);
@@ -103,8 +103,8 @@
             object-fit: cover;
         }
 
-        /* Swipe / Scroll Right Interactive Prompt */
-        .scroll-down {
+        /* Dark Mode Toggle Switch Styling */
+        .theme-switch-wrapper {
             margin-top: 20px;
             display: flex;
             align-items: center;
@@ -115,41 +115,51 @@
             letter-spacing: 1px;
         }
 
-        .swipe-track {
+        .switch {
             position: relative;
-            width: 120px;
-            height: 36px;
-            background: rgba(244, 209, 174, 0.15);
-            border: 1px solid var(--champagne);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            padding: 0 4px;
-            overflow: hidden;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
         }
 
-        .swipe-btn {
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
             position: absolute;
-            left: 4px;
-            width: 28px;
-            height: 28px;
-            background-color: var(--champagne);
-            color: var(--navy);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1rem;
             cursor: pointer;
-            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            animation: swipePrompt 2s infinite ease-in-out;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(244, 209, 174, 0.2);
+            border: 1px solid var(--champagne);
+            transition: 0.3s;
+            border-radius: 26px;
         }
 
-        .swipe-btn:hover {
-            background-color: #ffffff;
-            color: var(--navy);
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: var(--champagne);
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--champagne);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(24px);
+            background-color: var(--navy);
         }
 
         /* About Me Section */
@@ -315,11 +325,6 @@
             50% { transform: translateY(-2px); }
             100% { transform: translateY(0px); }
         }
-
-        @keyframes swipePrompt {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(76px); }
-        }
     </style>
 </head>
 <body>
@@ -335,12 +340,13 @@
                         Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio documenting my academic journey, projects, and growth.
                     </p>
                     
-                    <!-- Swipe Right Interactive Prompt -->
-                    <div class="scroll-down">
-                        <span id="swipe-text">swipe right for dark mode</span>
-                        <div class="swipe-track">
-                            <div class="swipe-btn" id="theme-toggle-btn" title="Click to toggle theme">&#8594;</div>
-                        </div>
+                    <!-- Dark Mode Toggle Switch -->
+                    <div class="theme-switch-wrapper">
+                        <span id="theme-label">Dark Mode</span>
+                        <label class="switch">
+                            <input type="checkbox" id="theme-toggle-checkbox">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
 
@@ -504,21 +510,21 @@
         <p>&copy; 2026 Teedchanaa Sugumaran | SCST1133</p>
     </footer>
 
-    <!-- JavaScript to Handle Swipe/Click Theme Switcher -->
+    <!-- JavaScript to Handle Theme Switcher -->
     <script>
-        const toggleBtn = document.getElementById('theme-toggle-btn');
-        const swipeText = document.getElementById('swipe-text');
-        
-        toggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                swipeText.textContent = 'swipe right for dark mode';
-            } else {
+        const themeToggle = document.getElementById('theme-toggle-checkbox');
+        const themeLabel = document.getElementById('theme-label');
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                swipeText.textContent = 'swipe right for light mode';
+                themeLabel.textContent = 'Light Mode';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                themeLabel.textContent = 'Dark Mode';
             }
         });
     </script>
 </body>
 </html>
+            
