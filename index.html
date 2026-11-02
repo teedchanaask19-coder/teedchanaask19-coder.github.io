@@ -1,530 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To Teedchanaa's E-Portfolio</title>
-    <!-- Import Lora font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Color Themes: Default Navy/Champagne & Dark Mode (Dark Purple & Gold) */
-        :root {
-            --navy: #0B2545;
-            --champagne: #F4D1AE;
-            --champagne-light: #FDF8F2;
-            --card-bg: #ffffff;
-            --text-main: #555555;
-            --footer-bg: #ffffff;
-            --footer-text: #555555;
-            --border-color: #e6d5c3;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome To Teedchanaa's E-Portfolio</title>
+<!-- Import Lora font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Color Themes: Default Navy/Champagne & Dark Mode (Dark Purple & Gold) */
+:root {
+    --navy: #0B2545;
+    --champagne: #F4D1AE;
+    --champagne-light: #FDF8F2;
+    --card-bg: #ffffff;
+    --text-main: #555555;
+    --footer-bg: #ffffff;
+    --footer-text: #555555;
+    --border-color: #e6d5c3;
+}
 
-        [data-theme="dark"] {
-            --navy: #1a0b2e;
-            --champagne: #FFD700;
-            --champagne-light: #12071f;
-            --card-bg: #221238;
-            --text-main: #e0d0e8;
-            --footer-bg: #1a0b2e;
-            --footer-text: #FFD700;
-            --border-color: #3b225c;
-        }
+[data-theme="dark"] {
+    --navy: #1a0b2e;
+    --champagne: #FFD700;
+    --champagne-light: #12071f;
+    --card-bg: #221238;
+    --text-main: #FFD700;
+    --footer-bg: #1a0b2e;
+    --footer-text: #FFD700;
+    --border-color: #3b225c;
+}
 
-        body {
-            margin: 0;
-            background-color: var(--champagne-light);
-            font-family: 'Lora', serif;
-            transition: background-color 0.4s ease, color 0.4s ease;
-            animation: pageFloat 6s ease-in-out infinite;
-        }
+body {
+    margin: 0;
+    background-color: var(--champagne-light);
+    font-family: 'Lora', serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    animation: pageFloat 6s ease-in-out infinite;
+}
 
-        /* Welcome Section */
-        .welcome {
-            background-color: var(--navy);
-            color: #ffffff;
-            padding: 40px 30px;
-            border-radius: 0 0 24px 24px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: background-color 0.4s ease;
-        }
+/* Welcome Section */
+.welcome {
+    background-color: var(--navy);
+    color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+}
 
-        .welcome-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
+.welcome-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
 
-        .header-content {
-            flex: 1;
-            text-align: left;
-        }
+.header-content {
+    flex: 1;
+    text-align: left;
+}
 
-        .welcome h1 {
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-            color: var(--champagne);
-            margin-bottom: 8px;
-        }
+.welcome h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--champagne);
+    margin-bottom: 8px;
+}
 
-        .welcome h2 {
-            font-size: 1.1rem;
-            color: #ffffff;
-            font-weight: normal;
-            margin-bottom: 15px;
-        }
+.welcome h2 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
 
-        .welcome p, .welcome .footer-note {
-            color: var(--champagne);
-            line-height: 1.5;
-            font-size: 0.95rem;
-        }
+.welcome p, .welcome .footer-note {
+    color: var(--champagne);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
 
-        /* Portrait Container (Arch Shape - Wider and Longer) */
-        .portrait-container {
-            width: 210px;
-            height: 290px;
-            background-color: var(--navy);
-            border-radius: 105px 105px 0 0;
-            border: 3px solid var(--champagne);
-            overflow: hidden;
-            flex-shrink: 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            transition: border-color 0.4s ease;
-        }
+/* Portrait Container (Arch Shape - Wider and Longer) */
+.portrait-container {
+    width: 210px;
+    height: 290px;
+    background-color: var(--navy);
+    border-radius: 105px 105px 0 0;
+    border: 3px solid var(--champagne);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: border-color 0.4s ease;
+}
 
-        .portrait-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.portrait-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        /* Dark Mode Toggle Switch Styling */
-        .theme-switch-wrapper {
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--champagne);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+/* Dark Mode Toggle Switch Styling */
+.theme-switch-wrapper {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--champagne);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 26px;
-        }
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
 
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(244, 209, 174, 0.2);
-            border: 1px solid var(--champagne);
-            transition: 0.3s;
-            border-radius: 26px;
-        }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(244, 209, 174, 0.2);
+    border: 1px solid var(--champagne);
+    transition: 0.3s;
+    border-radius: 26px;
+}
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 3px;
-            bottom: 3px;
-            background-color: var(--champagne);
-            transition: 0.3s;
-            border-radius: 50%;
-        }
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--champagne);
+    transition: 0.3s;
+    border-radius: 50%;
+}
 
-        input:checked + .slider {
-            background-color: var(--champagne);
-        }
+input:checked + .slider {
+    background-color: var(--champagne);
+}
 
-        input:checked + .slider:before {
-            transform: translateX(24px);
-            background-color: var(--navy);
-        }
+input:checked + .slider:before {
+    transform: translateX(24px);
+    background-color: var(--navy);
+}
 
-        /* About Me Section */
-        .about-section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* About Me Section */
+.about-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .about-section .section-title {
-            text-align: center;
-            color: var(--navy);
-            margin-bottom: 30px;
-            font-size: 2.2rem;
-            transition: color 0.4s ease;
-        }
+.about-section .section-title {
+    text-align: center;
+    color: var(--navy);
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    transition: color 0.4s ease;
+}
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+[data-theme="dark"] .about-section .section-title,
+[data-theme="dark"] .journey-section .section-title {
+    color: var(--champagne);
+}
 
-        .about-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(11, 37, 69, 0.08);
-            overflow: hidden;
-            border-top: 4px solid var(--navy);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
-        }
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
 
-        .about-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 24px rgba(11, 37, 69, 0.12);
-        }
+.about-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(11, 37, 69, 0.08);
+    overflow: hidden;
+    border-top: 4px solid var(--navy);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
+}
 
-        .about-card-header {
-            background-color: var(--navy);
-            color: var(--champagne);
-            padding: 20px;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
+.about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(11, 37, 69, 0.12);
+}
 
-        .about-card-header .num {
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            opacity: 0.8;
-            display: block;
-            margin-bottom: 5px;
-        }
+.about-card-header {
+    background-color: var(--navy);
+    color: var(--champagne);
+    padding: 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
 
-        .about-card-header h3 {
-            margin: 0;
-            font-size: 1.25rem;
-        }
+.about-card-header .num {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 5px;
+}
 
-        .about-card-body {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+.about-card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
 
-        .description-box {
-            background: var(--card-bg);
-            border: 2px dashed var(--border-color);
-            padding: 15px;
-            border-radius: 8px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
-        }
+.about-card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        /* Journey / Artifact Section */
-        .journey-section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.description-box {
+    background: var(--card-bg);
+    border: 2px dashed var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
 
-        .journey-section .section-title {
-            text-align: center;
-            color: var(--navy);
-            margin-bottom: 30px;
-            font-size: 2.2rem;
-            transition: color 0.4s ease;
-        }
+/* Journey / Artifact Section */
+.journey-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+.journey-section .section-title {
+    text-align: center;
+    color: var(--navy);
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    transition: color 0.4s ease;
+}
 
-        .artifact-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(11, 37, 69, 0.04);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
-        }
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
 
-        .artifact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 32px rgba(11, 37, 69, 0.1);
-        }
+.artifact-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(11, 37, 69, 0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
+}
 
-        .card-number-header {
-            background: var(--navy);
-            color: var(--champagne);
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
+.artifact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(11, 37, 69, 0.1);
+}
 
-        .card-number-header .num {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--champagne);
-            line-height: 1;
-        }
+.card-number-header {
+    background: var(--navy);
+    color: var(--champagne);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
 
-        .card-number-header h2 {
-            font-size: 1rem;
-            margin: 0;
-            text-align: right;
-            max-width: 180px;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+.card-number-header .num {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--champagne);
+    line-height: 1;
+}
 
-        .card-body {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.card-number-header h2 {
+    font-size: 1rem;
+    margin: 0;
+    text-align: right;
+    max-width: 180px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--footer-text);
-            border-top: 1px solid var(--border-color);
-            background-color: var(--footer-bg);
-            margin-top: 40px;
-            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
-        }
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-        /* Animations */
-        @keyframes pageFloat {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-2px); }
-            100% { transform: translateY(0px); }
-        }
-    </style>
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--footer-text);
+    border-top: 1px solid var(--border-color);
+    background-color: var(--footer-bg);
+    margin-top: 40px;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Animations */
+@keyframes pageFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+    100% { transform: translateY(0px); }
+}
+</style>
 </head>
 <body>
-
-    <main>
-        <!-- Welcome Section with Title, Intro, and Portrait -->
-        <section id="home" class="welcome">
-            <div class="welcome-container">
-                <div class="header-content">
-                    <h1>WELCOME TO TEEDCHANAA E-PORTFOLIO</h1>
-                    <h2>A Journey into Data Engineering</h2>
-                    <p>
-                        Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio documenting my academic journey, projects, and growth.
-                    </p>
-                    
-                    <!-- Dark Mode Toggle Switch -->
-                    <div class="theme-switch-wrapper">
-                        <span id="theme-label">Dark Mode</span>
-                        <label class="switch">
-                            <input type="checkbox" id="theme-toggle-checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Arch-Shaped Vertical Portrait (Wider and Longer) -->
-                <div class="portrait-container">
-                    <img src="PATH_TO_YOUR_PORTRAIT_IMAGE" alt="Teedchanaa Portrait">
+<main>
+    <!-- Welcome Section with Title, Intro, and Portrait -->
+    <section id="home" class="welcome">
+        <div class="welcome-container">
+            <div class="header-content">
+                <h1>WELCOME TO TEEDCHANAA E-PORTFOLIO</h1>
+                <h2>A Journey into Data Engineering</h2>
+                <p>
+                    Hello, I'm Teedchanaa A/P Sugumaran! This is my personal e-portfolio documenting my academic journey, projects, and growth.
+                </p>
+                <!-- Dark Mode Toggle Switch -->
+                <div class="theme-switch-wrapper">
+                    <span id="theme-label">Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle-checkbox">
+                        <span class="slider"></span>
+                    </label>
                 </div>
             </div>
-        </section>
+            <!-- Arch-Shaped Vertical Portrait (Wider and Longer) -->
+            <div class="portrait-container">
+                <img src="PATH_TO_YOUR_PORTRAIT_IMAGE" alt="Teedchanaa Portrait">
+            </div>
+        </div>
+    </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="about-section">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <!-- 01 -->
-                <div class="about-card">
-                    <div class="about-card-header">
-                        <span class="num">01</span>
-                        <h3>Core Information</h3>
-                    </div>
-                    <div class="about-card-body">
-                        <div class="description-box" style="line-height: 1.8;">
-                            <p style="margin: 0 0 10px 0;">&rarr; Completed Foundation in Science at AIMST University (2025/26)</p>
-                            <p style="margin: 0 0 5px 0; font-weight: bold;">&rarr; Skills:</p>
-                            <ul style="margin: 0 0 10px 20px; padding: 0;">
-                                <li>Basic computer knowledge</li>
-                                <li>Problem-solving skills</li>
-                                <li>Logical thinking</li>
-                                <li>Willingness to learn programming</li>
-                                <li>Communication and teamwork</li>
-                            </ul>
-                            <p style="margin: 0 0 5px 0; font-weight: bold;">&rarr; Interests:</p>
-                            <ul style="margin: 0 0 0 20px; padding: 0;">
-                                <li>Technology and computers</li>
-                                <li>Learning programming</li>
-                                <li>Organising and analysing information</li>
-                            </ul>
-                        </div>
-                    </div>
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <!-- 01 -->
+            <div class="about-card">
+                <div class="about-card-header">
+                    <span class="num">01</span>
+                    <h3>Core Information</h3>
                 </div>
-
-                <!-- 02 -->
-                <div class="about-card">
-                    <div class="about-card-header">
-                        <span class="num">03</span>
-                        <h3>Credentials &amp; Learning</h3>
-                    </div>
-                    <div class="about-card-body">
-                        <div class="description-box">
-                            Relevant courses, certificates, workshops, or key achievements...
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 03 -->
-                <div class="about-card">
-                    <div class="about-card-header">
-                        <span class="num">04</span>
-                        <h3>Professional Links</h3>
-                    </div>
-                    <div class="about-card-body">
-                        <div class="description-box" style="line-height: 1.8;">
-                            <p style="margin: 0 0 10px 0;">
-                                &rarr; <strong>GitHub profile:</strong> <a href="https://github.com/teedchanaask19-coder" target="_blank" style="color: var(--champagne); text-decoration: underline;">@teedchanaask19-coder</a>
-                            </p>
-                            <p style="margin: 0 0 10px 0;">
-                                &rarr; <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/teedchanaa-sugumaran-593b75442" target="_blank" style="color: var(--champagne); text-decoration: underline;">View LinkedIn Profile</a>
-                            </p>
-                        </div>
+                <div class="about-card-body">
+                    <div class="description-box" style="line-height: 1.8;">
+                        <p style="margin: 0 0 10px 0;">&rarr; Completed Foundation in Science at AIMST University (2025/26)</p>
+                        <p style="margin: 0 0 5px 0; font-weight: bold;">&rarr; Skills:</p>
+                        <ul style="margin: 0 0 10px 20px; padding: 0;">
+                            <li>Basic computer knowledge</li>
+                            <li>Problem-solving skills</li>
+                            <li>Logical thinking</li>
+                            <li>Willingness to learn programming</li>
+                            <li>Communication and teamwork</li>
+                        </ul>
+                        <p style="margin: 0 0 5px 0; font-weight: bold;">&rarr; Interests:</p>
+                        <ul style="margin: 0 0 0 20px; padding: 0;">
+                            <li>Technology and computers</li>
+                            <li>Learning programming</li>
+                            <li>Organising and analysing information</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Journey Section -->
-        <section id="journey" class="journey-section">
-            <h2 class="section-title">My Journey So Far</h2>
-            <div class="portfolio-grid">
-                <!-- 01 -->
-                <div class="artifact-card">
-                    <div class="card-number-header">
-                        <span class="num">01</span>
-                        <h2>Design Thinking &amp; Figma Project</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="description-box">
-                            Still in progress...
-                        </div>
+            <!-- 02 -->
+            <div class="about-card">
+                <div class="about-card-header">
+                    <span class="num">03</span>
+                    <h3>Credentials &amp; Learning</h3>
+                </div>
+                <div class="about-card-body">
+                    <div class="description-box">
+                        Relevant courses, certificates, workshops, or key achievements...
                     </div>
                 </div>
+            </div>
 
-                <!-- 02 -->
-                <div class="artifact-card">
-                    <div class="card-number-header">
-                        <span class="num">02</span>
-                        <h2>Industry Talk</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="description-box">
-                            Upcoming soon
-                        </div>
-                    </div>
+            <!-- 03 -->
+            <div class="about-card">
+                <div class="about-card-header">
+                    <span class="num">04</span>
+                    <h3>Professional Links</h3>
                 </div>
-
-                <!-- 03 -->
-                <div class="artifact-card">
-                    <div class="card-number-header">
-                        <span class="num">03</span>
-                        <h2>Industry Visit</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="description-box">
-                            Coming soon...
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 04 -->
-                <div class="artifact-card">
-                    <div class="card-number-header">
-                        <span class="num">04</span>
-                        <h2>Data Engineering Lifecycle Video</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="description-box">
-                            Will be updated...
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 05 -->
-                <div class="artifact-card">
-                    <div class="card-number-header">
-                        <span class="num">05</span>
-                        <h2>Data Acquisition Work</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="description-box">
-                            Update Soon...
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 06 -->
-                <div class="artifact-card">
-                    <div class="card-number-header">
-                        <span class="num">06</span>
-                        <h2>Presentation &amp; Other Activities</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="description-box">
-                            Upcoming Soon...
+                <div class="about-card-body">
+                    <div class="description-box" style="line-height: 1.8;">
+                        <p style="margin: 0 0 10px 0;">
+                            &rarr; <strong>GitHub profile:</strong> <a href="https://github.com/teedchanaask19-coder" target="_blank" style="color: var(--champagne); text-decoration: underline;">@teedchanaask19-coder</a>
+                        </p>
+                        <p style="margin: 0 0 10px 0;">
+                            &rarr; <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/teedchanaa-sugumaran-593b75442" target="_blank" style="color: var(--champagne); text-decoration: underline;">View LinkedIn Profile</a>
+                        </p>
+                        <!-- UTM Picture Added Here -->
+                        <div style="margin-top: 15px; text-align: center;">
+                            <img src="PATH_TO_YOUR_UTM_IMAGE" alt="UTM Logo/Picture" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color);">
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Teedchanaa Sugumaran | SCST1133</p>
-    </footer>
+    <!-- Journey Section -->
+    <section id="journey" class="journey-section">
+        <h2 class="section-title">My Journey So Far</h2>
+        <div class="portfolio-grid">
+            <!-- 01 -->
+            <div class="artifact-card">
+                <div class="card-number-header">
+                    <span class="num">01</span>
+                    <h2>Design Thinking &amp; Figma Project</h2>
+                </div>
+                <div class="card-body">
+                    <div class="description-box">
+                        Still in progress...
+                    </div>
+                </div>
+            </div>
 
-    <!-- JavaScript to Handle Theme Switcher -->
-    <script>
-        const themeToggle = document.getElementById('theme-toggle-checkbox');
-        const themeLabel = document.getElementById('theme-label');
+            <!-- 02 -->
+            <div class="artifact-card">
+                <div class="card-number-header">
+                    <span class="num">02</span>
+                    <h2>Industry Talk</h2>
+                </div>
+                <div class="card-body">
+                    <div class="description-box">
+                        Upcoming soon
+                    </div>
+                </div>
+            </div>
 
-        themeToggle.addEventListener('change', () => {
-            if (themeToggle.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeLabel.textContent = 'Light Mode';
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-                themeLabel.textContent = 'Dark Mode';
-            }
-        });
-    </script>
+            <!-- 03 -->
+            <div class="artifact-card">
+                <div class="card-number-header">
+                    <span class="num">03</span>
+                    <h2>Industry Visit</h2>
+                </div>
+                <div class="card-body">
+                    <div class="description-box">
+                        Coming soon...
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 -->
+            <div class="artifact-card">
+                <div class="card-number-header">
+                    <span class="num">04</span>
+                    <h2>Data Engineering Lifecycle Video</h2>
+                </div>
+                <div class="card-body">
+                    <div class="description-box">
+                        Will be updated...
+                    </div>
+                </div>
+            </div>
+
+            <!-- 05 -->
+            <div class="artifact-card">
+                <div class="card-number-header">
+                    <span class="num">05</span>
+                    <h2>Data Acquisition Work</h2>
+                </div>
+                <div class="card-body">
+                    <div class="description-box">
+                        Update Soon...
+                    </div>
+                </div>
+            </div>
+
+            <!-- 06 -->
+            <div class="artifact-card">
+                <div class="card-number-header">
+                    <span class="num">06</span>
+                    <h2>Presentation &amp; Other Activities</h2>
+                </div>
+                <div class="card-body">
+                    <div class="description-box">
+                        Upcoming Soon...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Teedchanaa Sugumaran | SCST1133</p>
+</footer>
+
+<!-- JavaScript to Handle Theme Switcher -->
+<script>
+const themeToggle = document.getElementById('theme-toggle-checkbox');
+const themeLabel = document.getElementById('theme-label');
+
+themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeLabel.textContent = 'Light Mode';
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeLabel.textContent = 'Dark Mode';
+    }
+});
+</script>
 </body>
 </html>
-            
