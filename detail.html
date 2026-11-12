@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Talk 1 Details - Teedchanaa's E-Portfolio</title>
+    <!-- Import Lora font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --navy: #0B2545;
+            --champagne: #F4D1AE;
+            --champagne-light: #FDF8F2;
+            --card-bg: #ffffff;
+            --text-main: #555555;
+            --border-color: #e6d5c3;
+        }
+
+        [data-theme="dark"] {
+            --navy: #1a0b2e;
+            --champagne: #FFD700;
+            --champagne-light: #12071f;
+            --card-bg: #221238;
+            --text-main: #FFD700;
+            --border-color: #3b225c;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--champagne-light);
+            font-family: 'Lora', serif;
+            color: var(--text-main);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--navy);
+            color: var(--champagne);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-btn:hover {
+            opacity: 0.85;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            color: var(--navy);
+            font-size: clamp(1.8rem, 3vw, 2.3rem);
+            margin-bottom: 0.5rem;
+        }
+
+        [data-theme="dark"] h1, [data-theme="dark"] h2 {
+            color: var(--champagne);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: var(--navy);
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .details-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(11, 37, 69, 0.04);
+        }
+
+        .details-box p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        /* 4 Pictures Grid Layout */
+        .pictures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            margin-bottom: 2.5rem;
+        }
+
+        .pictures-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .pictures-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        .reflection-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--navy);
+            border-radius: 0 12px 12px 0;
+            padding: 20px 25px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(11, 37, 69, 0.04);
+            line-height: 1.7;
+        }
+
+        [data-theme="dark"] .reflection-box {
+            border-left-color: var(--champagne);
+        }
+
+        .reflection-box p {
+            margin: 0 0 12px 0;
+        }
+
+        .reflection-box p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Back Button to Main Page -->
+        <a href="index.html" class="back-btn">&larr; Back to Main Page</a>
+
+        <!-- Dynamic Content Container -->
+        <div id="talk-content">
+            <h1>Industry Talk 1: Creative Thinking</h1>
+            <p class="subtitle">Talk on creative thinking, teaching innovation and practical development</p>
+
+            <h2>📋 Program Details</h2>
+            <div class="details-box">
+                <p><strong>Title:</strong> Creative Thinking</p>
+                <p><strong>Speaker:</strong> Dr Zahari Othman<br><span style="font-size: 0.9rem; opacity: 0.85;">Director, Center for Teaching Thinking &amp; Innovation (CenT-TI)</span></p>
+                <p><strong>Date:</strong> 3rd November 2026</p>
+                <p><strong>Time:</strong> 10:00 AM to 6:00 PM</p>
+                <p><strong>Venue:</strong> N28</p>
+            </div>
+
+            <h2>📌 Pictures</h2>
+            <div class="pictures-grid">
+                <!-- Replace these 4 filenames with your actual uploaded image files -->
+                <img src="talk1_pic1.jpg" alt="Industry Talk 1 Picture 1">
+                <img src="talk1_pic2.jpg" alt="Industry Talk 1 Picture 2">
+                <img src="talk1_pic3.jpg" alt="Industry Talk 1 Picture 3">
+                <img src="talk1_pic4.jpg" alt="Industry Talk 1 Picture 4">
+            </div>
+
+            <h2>🪞 Reflection</h2>
+            <div class="reflection-box">
+                <p>I had the opportunity to attend an industry talk by Dr. Zahari Othman, where I gained valuable insights into critical thinking, creative thinking and Higher Order Thinking Skills (HOTS).</p>
+                <p>One important lesson I learned is that learning is not just about memorising information but also about understanding, analysing and solving problems independently.</p>
+                <p>I also realised that creative thinking plays an important role in cloud computing, as it helps develop innovative solutions such as cloud storage and automatic backup systems. Overall, this talk was a meaningful experience that encouraged me to think creatively, improve my problem-solving skills and continue learning.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Universal script handler in case you want to reuse this detail.html for Talk 2 later using ?talk=2
+        const urlParams = new URLSearchParams(window.location.search);
+        const talkId = urlParams.get('talk');
+
+        if (talkId === "2") {
+            // You can customize Talk 2 details here later if needed
+            document.querySelector('h1').innerText = "Industry Talk 2: Case Study: Ortech";
+            document.querySelector('.subtitle').innerText = "Learn how ORTECH applies analytics engineering in practice...";
+        }
+    </script>
+</body>
+</html>
