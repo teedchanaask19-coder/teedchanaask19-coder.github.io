@@ -314,6 +314,56 @@ input:checked + .slider:before {
     flex-direction: column;
 }
 
+/* Styles for Clickable Industry Talk Sub-Cards inside Card 02 */
+.talk-subgrid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.talk-card-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.talk-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.talk-card-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.talk-card-info {
+    padding: 12px;
+}
+
+.talk-card-info h4 {
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin: 0 0 6px 0;
+}
+
+[data-theme="dark"] .talk-card-info h4 {
+    color: var(--champagne);
+}
+
+.talk-card-info p {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
 footer {
     text-align: center;
     padding: 30px;
@@ -444,15 +494,51 @@ footer {
                 </div>
             </div>
 
-            <!-- 02 -->
+            <!-- 02: Industry Talks & Visits (Integrated with your pictures layout) -->
             <div class="artifact-card">
                 <div class="card-number-header">
                     <span class="num">02</span>
-                    <h2>Industry Talk</h2>
+                    <h2>Industry Talks &amp; Visits</h2>
                 </div>
                 <div class="card-body">
-                    <div class="description-box">
-                        Upcoming soon
+                    <div class="talk-subgrid">
+                        
+                        <!-- Talk 1 -->
+                        <a href="detail.html?talk=1" class="talk-card-item">
+                            <img src="path-to-image1.jpg" alt="Clarity Techworks Talk">
+                            <div class="talk-card-info">
+                                <h4>Overview of ICT Jobs in Clarity Techworks Sdn. Bhd.</h4>
+                                <p>A talk on various job opportunities essential to the IT industry...</p>
+                            </div>
+                        </a>
+
+                        <!-- Talk 2 -->
+                        <a href="detail.html?talk=2" class="talk-card-item">
+                            <img src="path-to-image2.jpg" alt="Credence Talk">
+                            <div class="talk-card-info">
+                                <h4>System Development @ Credence (TM Subsidiary)</h4>
+                                <p>A talk focusing on the role of a data analyst and challenges...</p>
+                            </div>
+                        </a>
+
+                        <!-- Talk 3 -->
+                        <a href="detail.html?talk=3" class="talk-card-item">
+                            <img src="path-to-image3.jpg" alt="I-FARM Talk">
+                            <div class="talk-card-info">
+                                <h4>Emerging Technologies for Business Growth in I-FARM</h4>
+                                <p>Power of emerging technologies in urban farming solutions...</p>
+                            </div>
+                        </a>
+
+                        <!-- Talk 4 -->
+                        <a href="detail.html?talk=4" class="talk-card-item">
+                            <img src="path-to-image4.jpg" alt="UTMDigital Visit">
+                            <div class="talk-card-info">
+                                <h4>Industrial Visit: Visit to UTMDigital</h4>
+                                <p>Learn more about digital services provided by UTM...</p>
+                            </div>
+                        </a>
+
                     </div>
                 </div>
             </div>
